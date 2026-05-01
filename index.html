@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Susan Waweru | IT Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+    <h1>Susan Waweru</h1>
+    <p>IT Student | Java Developer | Web Developer</p>
+    <a href="#projects" class="btn">View My Work</a>
+</header>
+
+<section class="about fade-in">
+    <h2>About Me</h2>
+    <p>
+        I am a third-year IT student passionate about building systems and solving real-world problems.
+        I specialize in Java, web development, and basic networking.
+    </p>
+</section>
+
+<section id="projects" class="projects fade-in">
+    <h2>Projects</h2>
+
+    <div class="card">
+        <h3>Student Management System</h3>
+        <p>Java + MySQL system with CRUD functionality for managing student records.</p>
+    </div>
+
+</section>
+
+<section class="skills fade-in">
+    <h2>Skills</h2>
+    <div class="skill-box">
+        <span>Java</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>MySQL</span>
+        <span>Networking</span>
+    </div>
+</section>
+
+<section class="contact fade-in">
+    <h2>Contact</h2>
+    <p>Email: waweru.suzan01@gmail.com</p>
+    <p>Phone: 0790522305</p>
+</section>
+
+<footer>
+    <p>© 2026 Susan Waweru</p>
+</footer>
+
+<script>
+    // Fade-in animation on scroll
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+        threshold: 0.3
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('appear');
+            observer.unobserve(entry.target);
+        });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+    });
+</script>
+
+</body>
+</html>
